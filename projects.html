@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Ryan Proffitt</title>
+  <meta name="description" content="Projects by Ryan Proffitt.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html"><span class="brand-mark">RP</span>Ryan Proffitt</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero compact">
+      <div class="container">
+        <h1>Projects</h1>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="container">
+        <div class="filters" id="filters" hidden></div>
+        <!--
+          HOW TO ADD A PROJECT
+          Copy one <article class="card"> block. Each card has:
+            - card-media: an <img> (with link), or <span class="initials"> for no image
+            - an <h2> title, linked if the project has a link
+            - a prose <div> with the description
+            - tags: one <span class="tag"> each (the filter buttons are built from these)
+            - an optional "Learn more" link
+        -->
+        <div id="projects">
+          <div class="card-grid">
+            <article class="card reveal">
+              <a class="card-media" href="https://bigsnail2839.grafana.net/public-dashboards/362dac709ecb42f6976aa8fa247d7ec9" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <img src="img/Grafana_logo.svg.png" alt="" loading="lazy">
+                <span class="overlay"><span>View Project</span></span>
+              </a>
+              <div class="card-body">
+                <h2><a href="https://bigsnail2839.grafana.net/public-dashboards/362dac709ecb42f6976aa8fa247d7ec9" target="_blank" rel="noopener">Live Satellite</a></h2>
+                <div class="prose">
+                  <p>A continuously running satellite simulation operated in real time. Uses the NASA Core Flight System framework. Every satellite instance I &ldquo;launch&rdquo; is treated as if it is real. That means real engineering design phases from concept to shipment. It also means realistic operations such as waiting for ground station contacts, driving modes, proper communication protocols, end of mission upon loss of spacecraft, etc.</p>
+                  <p>All mission data is available via the main Grafana dashboard. Grafana dashboards for particular missions of interest are also made available.</p>
+                  <p>I hope to build out a satellite design that I can use later for a real satellite when launch costs come down in several years.</p>
+                </div>
+                <div class="tags"><span class="tag">space</span><span class="tag">hardware</span><span class="tag">software</span></div>
+                <a class="card-link" href="https://bigsnail2839.grafana.net/public-dashboards/362dac709ecb42f6976aa8fa247d7ec9" target="_blank" rel="noopener">Learn more &rarr;</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <div class="card-media"><span class="initials" aria-hidden="true">AA</span></div>
+              <div class="card-body">
+                <h2>AI Assisted Spacecraft Operations</h2>
+                <div class="prose">
+                  <p>A tool and procedure to use AI to assist with mission operations (LLMs, agentic AI, etc). There are two identified use cases within the scope of this project:</p>
+                  <ol>
+                    <li>Passive monitoring and suggestion of changes in real time for standard operations.</li>
+                    <li>Active assistance with operational activity at the time of request from a user.</li>
+                  </ol>
+                  <p>The first use case involves the tool using the spacecraft design documentation, concept of operations, the past and current states of the spacecraft, and mission events as input. The output is a one-off change proposal that includes what the change is, the command sequence and conditionals to proceed through the sequence, the reasoning for the change, and a description of the intended state the spacecraft will be in at the end of the change.</p>
+                </div>
+                <div class="tags"><span class="tag">space</span><span class="tag">operations</span></div>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <div class="card-media"><span class="initials" aria-hidden="true">HS</span></div>
+              <div class="card-body">
+                <h2>Hosted Satellite Architecture</h2>
+                <div class="prose">
+                  <p>A framework for a satellite software architecture that allows for hosting of customer mission subarchitectures safely. In other words, with this framework I could launch my own satellite with which I could rent out time and functionality to others. A potential use case is to make a bit of extra money once the primary mission is over by renting out time on the satellite. Customers may want to test their logic with a real satellite in orbit (for example trying out a particular piece of hardware, testing their proprietary attitude control logic, to validate operations, or to train team members).</p>
+                </div>
+                <div class="tags"><span class="tag">space</span><span class="tag">software</span></div>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <div class="card-media"><span class="initials" aria-hidden="true">RO</span></div>
+              <div class="card-body">
+                <h2>Rewrite of NASA cFS in Rust</h2>
+                <div class="prose">
+                  <p>Using Claude Code to rewrite cFS in Rust.</p>
+                </div>
+                <div class="tags"><span class="tag">space</span><span class="tag">software</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; <span id="year"></span> Ryan Proffitt</span>
+      <nav aria-label="Footer">
+        <a href="index.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a class="footer-linkedin" href="https://www.linkedin.com/in/ryanproffitt" target="_blank" rel="noopener noreferrer" aria-label="Ryan Proffitt on LinkedIn">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>
